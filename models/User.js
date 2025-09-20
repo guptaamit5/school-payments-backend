@@ -2,8 +2,12 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
 const UserSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  student_id: { type: String, required: true, unique: true }, 
+  school_id: { type: String, required: true },
+  trustee_id: { type: String, required: true },
   email: { type: String, required: true, unique: true },
-  password: { type: String, required: true }
+  password: { type: String, required: true },
 });
 
 // Password hash before saving
